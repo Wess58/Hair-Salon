@@ -19,6 +19,25 @@ public class Client {
         this.stylistId = stylistId;
     }
 
-  
+    public String getClientFirstName(){
+        return clientFirstName;
+    }
+    public String getClientLastName(){
+        return clientLastName;
+    }
+    public String getClientPhoneNo(){
+        return clientPhoneNo;
+    }
+    public String getClientEmail(){
+        return clientEmail;
+    }
+    public int getId() {
+        return id;
+    }
+    public int getStylistId() {
+        return stylistId;
+    }
+    
+
 
 }
