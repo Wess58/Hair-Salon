@@ -1,0 +1,49 @@
+<div class="container">
+<h1>KIDOSHO QUEENS SALON
+  <img id="icon" src="images/woman-haircut.png">
+</h1>
+<h2>Salon Managament System</h1>
+<div class="row row1">
+ <div class="col-md-6 form">
+   <form action="/stylists" method="post">
+
+       <div class="form-group">
+            <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
+            </div>
+
+        <div class="form-group">
+            <input id="secondName" name="secondName" type="text" placeholder="Second Name" required>
+            </div>
+
+        <div class="form-group">
+            <input id="lastName" name="lastName" type="text" placeholder="Last Name" required>
+            </div>
+
+        <div class="form-group">
+            <input id="phoneNo" name="phoneNo" type="text" placeholder="Phone number +2547********" min="10" max="13"required>
+            </div>
+
+        <div class="form-group">
+            <input id="idNo" name="idNo" type="text" placeholder="National ID number"  min="8" max="8" required>
+            </div>
+
+        <div class="form-group">
+            <input id="email" name="email" type="email" placeholder="Email  eg:'stylist@.gmail.com'" required>
+            </div>
+
+    </form>
+
+            <a href="/stylists" class="btn btn-light">Add new stylist</a>
+    </div>
+    <div class="col-md-6">
+
+    <ul>
+      #foreach ($stylist in $stylists)
+        <li><a href="/stylists/$stylist.getId()">$stylist.getFirstName().getSecondName().getLastName()</a></li>
+        <li>$stylist.getPhoneNo</li>
+        #end
+    </ul>
+        kdjkfjkfjkcf
+    </div>
+   </div>
+</div>
