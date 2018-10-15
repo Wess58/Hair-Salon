@@ -20,5 +20,80 @@ public class App{
 
         setPort(port);
 //end heroku
+        //LANDING PAGE && STYLISTS DISPLAY && NEW STYLISTS FORM
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/stylists.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //View individual stylists
+        get("/stylists/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
+            model.put("stylist", stylist);
+            model.put("template", "templates/stylist.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //basically to post and display in stylists.vtl
+        post("/stylists", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String firstName = request.queryParams("firstName");
+            String secondName = request.queryParams("secondName");
+            String lastName = request.queryParams("lastName");
+            String phoneNo = request.queryParams("phoneNo");
+            String idNo = request.queryParams("idNo");
+            String email = request.queryParams("email");
+            Stylist newStylist = new Stylist(firstName, secondName, lastName, phoneNo, idNo, email);
+            newStylist.save();
+            model.put("template", "templates/stylists.vtl");
+            response.redirect("/");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //form for new clients in a specific stylist
+        get("stylist/:id/clients/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
+            model.put("stylist", stylist);
+            model.put("template", "templates/stylist.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //to view ALL clients in one page
+        get("/clients", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("clients", Client.all());
+            model.put("template", "templates/clients.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //to view each clients further details
+        get("/clients/:id", (request, response) -> {
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            Client client = Client.find(Integer.parseInt(request.params(":id")));
+            model.put("client", client);
+            model.put("template", "templates/client.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //Client posting
+        post("stylist/:id/clients/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
+            String clientFirstName = request.queryParams("clientFirstName");
+            String clientLastName = request.queryParams("clientLastName");
+            String clientPhoneNo = request.queryParams("clientPhoneNo");
+            String clientEmail = request.queryParams("clientEmail");
+            Client newTask = new Client(clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylist.getId());
+            newTask.save();
+            model.put("stylist", stylist);
+            model.put("template", "templates/stylist.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+
+
     }
 }
