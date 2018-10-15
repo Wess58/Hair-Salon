@@ -1,0 +1,15 @@
+
+        <h1>client list!</h1>
+
+        #if ($clients)
+        <ul>
+        #foreach ($client in $clients)
+        <li><a href="/clients/$client.getId()">$client.getClientFirstName().getClientLastName</a></li>
+        #end
+        </ul>
+        #else
+        <p>No clients!</p>
+        #end
+
+        <a href="/stylist/$stylist.getId()/clients/new">Add New client</a>
+        <a href="/">View stylists</a>
