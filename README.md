@@ -7,7 +7,7 @@
   This is a simple Hair-Salon management system that stores stylists and clients successfully because the App is integrated with a Database,therefore, the owner is be able to add a list of the stylists, and for each stylist, add clients who are attended to by that stylist. The stylists work independently, so each client only belongs to a single stylist.
 
 
- Here's the link to Live site :<  >
+ Here's the link to Live site :< https://dashboard.heroku.com/apps/still-beyond-33322 >
 
 ### Prerequisites
 
