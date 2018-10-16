@@ -48,7 +48,6 @@ public class App{
             Stylist newStylist = new Stylist(firstName, secondName, lastName, phoneNo, idNo, email);
             newStylist.save();
             model.put("template", "templates/stylists.vtl");
-            response.redirect("/");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -86,8 +85,8 @@ public class App{
             String clientLastName = request.queryParams("clientLastName");
             String clientPhoneNo = request.queryParams("clientPhoneNo");
             String clientEmail = request.queryParams("clientEmail");
-            Client newTask = new Client(clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylist.getId());
-            newTask.save();
+            Client newClient = new Client(clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylist.getId());
+            newClient.save();
             model.put("stylist", stylist);
             model.put("template", "templates/stylist.vtl");
             return new ModelAndView(model, layout);

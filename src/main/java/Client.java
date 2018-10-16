@@ -68,8 +68,7 @@ public class Client {
     }
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO clients (clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylistId) " +
-                    "VALUES (:clientFirstName, :clientLastName, :clientPhoneNo, :clientEmail, :stylistId)";
+            String sql = "INSERT INTO clients (clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylistId) VALUES (:clientFirstName, :clientLastName, :clientPhoneNo, :clientEmail, :stylistId)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("clientFirstName", this.clientFirstName)
                     .addParameter("clientLastName", this.clientLastName)

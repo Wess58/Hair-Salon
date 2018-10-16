@@ -42,8 +42,7 @@ public class Stylist {
     }
     //DATABASE SASA
     public static List<Stylist> all(){
-        String sql = "SELECT id, firstName, secondName, lastName, phoneNo, idNo, email" +
-                "FROM stylists";
+        String sql = "SELECT id, firstName, secondName, lastName, phoneNo, idNo, email FROM stylists";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(Stylist.class);
         }
