@@ -23,6 +23,7 @@ public class App{
         //LANDING PAGE && STYLISTS DISPLAY && NEW STYLISTS FORM
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            model.put("stylists", Stylist.all());
             model.put("template", "templates/stylists.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -47,12 +48,13 @@ public class App{
             String email = request.queryParams("email");
             Stylist newStylist = new Stylist(firstName, secondName, lastName, phoneNo, idNo, email);
             newStylist.save();
+            response.redirect("/");
             model.put("template", "templates/stylists.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
         //form for new clients in a specific stylist
-        get("stylist/:id/clients/new", (request, response) -> {
+        get("/clients/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
             model.put("stylist", stylist);
@@ -78,7 +80,7 @@ public class App{
         }, new VelocityTemplateEngine());
 
         //Client posting
-        post("stylist/:id/clients/new", (request, response) -> {
+        post("/clients/new", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
             String clientFirstName = request.queryParams("clientFirstName");
