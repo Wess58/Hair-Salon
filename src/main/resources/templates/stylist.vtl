@@ -1,19 +1,58 @@
+<div class="container">
 <h1>$stylist.getFirstName()'s clients:</h1>
+
+ <p class="stylistDetails">$stylist.getPhoneNo()
+ <br>
+ $stylist.getIdNo()
+ <br>
+ $stylist.getEmail()
+ <br>
+
 <ul>
- <li>$stylist.getPhoneNo</li>
- <li>$stylist.getIdNo</li>
- <li>$stylist.getEmail</li>
-</ul>
-<ul>
+<div class="row">
+  <div class="col-md-6>">
+      <form action="/clients/new" method="post">
+                           <h3>ADD CLIENT</h3>
+          <div class="form-group">
+               <input id="clientFirstName" name="clientFirstName" type="text" placeholder="First Name" required>
+               </div>
+
+           <div class="form-group">
+               <input id="clientLastName" name="clientLastName" type="text" placeholder="Last Name" required>
+               </div>
+
+           <div class="form-group">
+               <input id="clientPhoneNo" name="clientPhoneNo" type="text" placeholder="Phone number +2547********" min="10" max="13"required>
+               </div>
+
+           <div class="form-group">
+               <input id="clientEmail" name="clientEmail" type="email" placeholder="Email  eg:'client@.gmail.com'" required>
+               </div>
+
+                <button type="submit" class="btn btn-outline-light">ADD</button>
+       </form>
+
+  <br>
+  <br>
+         <a href="/stylist/$stylist.getId()/clients/new">Add a new client</a>
+         <br>
+         <a href="/">All stylists</a>
+ </div>
+
+ <div class="col-md-6>">
+ <ul>
   #foreach($client in $stylist.getClients())
    <li><a href="/clients/$client.getId()">$client.getClientFirstName()
    .getClientLastName()</a></li>
    <li>$client.getClientPhoneNo()</li>
    <li>$client.getClientEmail()</li>
    <br>
-   <button type="complete">Delete</button>
+   <button class="btn btn-outline-danger" type="complete">Delete</button>
   #end
 </ul>
+aJASJHSJHSJHSJHSDJHSD
+</div>
+</div>
 
-<a href="/stylist/$stylist.getId()/clients/new">Add a new client</a>
-<a href="/">All stylists</a>
+
+</div>

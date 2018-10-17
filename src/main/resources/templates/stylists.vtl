@@ -5,7 +5,7 @@
 <h2>Salon Managament System</h1>
 <div class="row row1">
  <div class="col-md-6 form">
-   <form action="/" method="post">
+   <form action="/stylists" method="post">
                         <h3>ADD STYLIST</h3>
        <div class="form-group">
             <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
@@ -31,18 +31,28 @@
             <input id="email" name="email" type="email" placeholder="Email  eg:'stylist@.gmail.com'" required>
             </div>
 
+             <button type="submit" class="btn btn-outline-light">ADD</button>
     </form>
 
-            <a href="/" class="btn btn-outline-light">ADD</a>
+
+
     </div>
     <div class="col-md-6">
 
-    <ul>
+    #if($stylists)
+
+    <ol>
       #foreach ($stylist in $stylists)
-        <li><a href="/stylists/$stylist.getId()">$stylist.getFirstName().getSecondName().getLastName()</a></li>
-        <li>$stylist.getPhoneNo</li>
+        <li><a href="/stylists/$stylist.getId()" class="links">$stylist.getFirstName() $stylist.getSecondName() $stylist.getLastName()</a></li>
+        <p>$stylist.getPhoneNo()
+        <br>
+        $stylist.getEmail()</p>
         #end
-    </ul>
+    </ol>
+    #else
+    <p>NO STYLISTS</p>
+    #end
+
 
     </div>
    </div>

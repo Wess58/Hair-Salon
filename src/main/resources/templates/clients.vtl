@@ -4,12 +4,13 @@
         #if ($clients)
         <ul>
         #foreach ($client in $clients)
-        <li><a href="/clients/$client.getId()">$client.getClientFirstName().getClientLastName</a></li>
+        <li>
+        $client.getClientFirstName() $client.getClientLastName
+        </li>
         #end
         </ul>
         #else
         <p>No clients!</p>
         #end
 
-        <a href="/stylist/$stylist.getId()/clients/new">Add New client</a>
-        <a href="/">View stylists</a>
+        <a href="/">View Stylists</a>
