@@ -41,6 +41,7 @@ public class Stylist {
         return id;
     }
     //DATABASE SASA
+
     public static List<Stylist> all(){
         String sql = "SELECT id, firstName, secondName, lastName, phoneNo, idNo, email FROM stylists";
         try(Connection con = DB.sql2o.open()) {
@@ -72,8 +73,7 @@ public class Stylist {
     }
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO stylists (firstName, secondName, lastName, phoneNo, idNo, email) " +
-                    "VALUES (:firstName, :secondName, :lastName, :phoneNo, :idNo, :email)";
+            String sql = "INSERT INTO stylists (firstName, secondName, lastName, phoneNo, idNo, email) VALUES (:firstName, :secondName, :lastName, :phoneNo, :idNo, :email)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("firstName", this.firstName)
                     .addParameter("secondName", this.secondName)
