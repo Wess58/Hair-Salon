@@ -36,6 +36,7 @@
 
 
 
+
     </div>
     <div class="col-md-6">
 
@@ -46,7 +47,11 @@
         <li><a href="/stylists/$stylist.getId()" class="links">$stylist.getFirstName() $stylist.getSecondName() $stylist.getLastName()</a></li>
         <p>$stylist.getPhoneNo()
         <br>
-        $stylist.getEmail()</p>
+        $stylist.getEmail()</p
+          <br>
+        <form action="#" method="">
+            <button type="submit" class="btn btn-danger" id="delete-task">Delete</button>
+    </form>
         #end
     </ol>
     #else

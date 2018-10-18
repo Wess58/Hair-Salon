@@ -1,7 +1,8 @@
 <div class="container">
 <h1>$stylist.getFirstName()'s clients:</h1>
 <div class="card">
-<h4>$stylist.getFirstName() details</h3>
+<h4>$stylist.getFirstName() details</h4>
+<hr>
  <p class="stylistDetails">Phone: $stylist.getPhoneNo()
  <br>
  ID: $stylist.getIdNo()
@@ -10,10 +11,9 @@
  </div>
 
 
-<ul>
-<div class="row">
-  <div class="col-md-6>">
-      <form action="/stylists" method="post">
+<div class="row rowclients">
+  <div class="col-md-6">
+      <form id="formclient" action="/stylists" method="post">
                            <h3>ADD CLIENT</h3>
           <div class="form-group">
                <input id="clientFirstName" name="clientFirstName" type="text" placeholder="First Name" required>
@@ -38,17 +38,18 @@
          <a href="/">All stylists</a>
  </div>
 
- <div class="col-md-6>">
- <ul>
+ <div class="col-md-6 clients">
+ <ol>
   #foreach($client in $stylist.getClients())
-   <li><a href="/clients/$client.getId()">$client.getClientFirstName()
-   .getClientLastName()</a></li>
-   <li>$client.getClientPhoneNo()</li>
-   <li>$client.getClientEmail()</li>
+   <li>$client.getClientFirstName()
+   $client.getClientLastName()</li>
+   <p>$client.getClientPhoneNo()
    <br>
+   $client.getClientEmail()</p>
+
    <button class="btn btn-outline-danger" type="complete">Delete</button>
   #end
-</ul>
+</ol>
 </div>
 </div>
 

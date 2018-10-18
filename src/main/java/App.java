@@ -53,6 +53,15 @@ public class App{
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        // delete Stylist
+        post("/stylists", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams(":id")));
+            stylist.delete();
+            response.redirect("/");
+            model.put("template", "templates/stylists.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
         //form for new clients in a specific stylist
         get("/clients", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -94,6 +103,15 @@ public class App{
             model.put("template", "templates/stylist.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+        post("/clients/:id/delete", (request, response) -> {
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            Client client = Client.find(Integer.parseInt(request.params("id")));
+            Stylist stylist = Stylist.find(client.getStylistId());
+            client.delete();
+            model.put("stylist", stylist);
+            model.put("template", "templates/stylist.vtl");
+            return new ModelAndView(model, layout);
+          }, new VelocityTemplateEngine());
 
 
 
