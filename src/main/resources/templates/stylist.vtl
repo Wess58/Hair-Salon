@@ -1,17 +1,19 @@
 <div class="container">
 <h1>$stylist.getFirstName()'s clients:</h1>
+<div class="card">
+<h4>$stylist.getFirstName() details</h3>
+ <p class="stylistDetails">Phone: $stylist.getPhoneNo()
+ <br>
+ ID: $stylist.getIdNo()
+ <br>
+ Email: $stylist.getEmail()
+ </div>
 
- <p class="stylistDetails">$stylist.getPhoneNo()
- <br>
- $stylist.getIdNo()
- <br>
- $stylist.getEmail()
- <br>
 
 <ul>
 <div class="row">
   <div class="col-md-6>">
-      <form action="/clients/new" method="post">
+      <form action="/stylists" method="post">
                            <h3>ADD CLIENT</h3>
           <div class="form-group">
                <input id="clientFirstName" name="clientFirstName" type="text" placeholder="First Name" required>
@@ -33,9 +35,6 @@
        </form>
 
   <br>
-  <br>
-         <a href="/stylist/$stylist.getId()/clients/new">Add a new client</a>
-         <br>
          <a href="/">All stylists</a>
  </div>
 
@@ -50,7 +49,6 @@
    <button class="btn btn-outline-danger" type="complete">Delete</button>
   #end
 </ul>
-aJASJHSJHSJHSJHSDJHSD
 </div>
 </div>
 

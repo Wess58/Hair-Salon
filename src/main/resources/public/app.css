@@ -41,10 +41,15 @@ a{
 
 }
 .stylistDetails{
-  font-size: 30px;
+  font-size: 20px;
 }
 .container{
   padding: 20px;
+}
+.card{
+    width: 350px;
+    padding:10px;
+    background-color:whitesmoke;
 }
 .row1{
   margin-top: 40px;
