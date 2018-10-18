@@ -1,13 +1,13 @@
-# Hair-Salon Java App
+# Hair-Salon Java App :haircut:
 
 ### By wesley Mbate
 
-## Description
+## Description :notebook:
 
   This is a simple Hair-Salon management system that stores stylists and clients successfully because the App is integrated with a Database,therefore, the owner is be able to add a list of the stylists, and for each stylist, add clients who are attended to by that stylist. The stylists work independently, so each client only belongs to a single stylist.
 
 
- Here's the link to Live site :< https://dashboard.heroku.com/apps/still-beyond-33322 >
+ Here's the link to Live site :< https://still-beyond-33322.herokuapp.com/ >
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@
    * CSS & Bootstrap
    * Junit
 
-### Installation guide
+### Installation guide :notebook:
 
   If you want to use this as your template, here's how to go about it:
 
@@ -53,7 +53,7 @@
 
 
 ### BUGS
-No Bugs found, If any are experienced contact via Email wesleymbate@gmail.com and the issue will be sorted.
+No Bugs found, If any are experienced contact via Email wesleymbate@gmail.com :mailbox: and the issue will be sorted.
 
 
 ### LICENSE
