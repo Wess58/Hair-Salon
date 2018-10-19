@@ -3,12 +3,13 @@ import java.util.Map;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import static spark.debug.DebugScreen.enableDebugScreen;
 
 public class App{
     public static void main(String[] args){
         staticFileLocation("/public");
         String layout = "templates/layout.vtl";
-
+        enableDebugScreen();
 //HEROKU
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
@@ -63,7 +64,7 @@ public class App{
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
         //form for new clients in a specific stylist
-        get("/clients", (request, response) -> {
+        get("/stylists/:id", (request, response) -> {response.redirect("/");
             Map<String, Object> model = new HashMap<String, Object>();
             Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
             model.put("stylist", stylist);
@@ -84,25 +85,28 @@ public class App{
             HashMap<String, Object> model = new HashMap<String, Object>();
             Client client = Client.find(Integer.parseInt(request.params(":id")));
             model.put("client", client);
-            model.put("template", "templates/client.vtl");
+            model.put("template", "templates/clients.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
         //Client posting
-        post("/stylists", (request, response) -> {
+        post("/stylists/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            Stylist stylist = Stylist.find(Integer.parseInt(request.queryParams("stylistId")));
+            Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));
             String clientFirstName = request.queryParams("clientFirstName");
             String clientLastName = request.queryParams("clientLastName");
             String clientPhoneNo = request.queryParams("clientPhoneNo");
             String clientEmail = request.queryParams("clientEmail");
             Client newClient = new Client(clientFirstName, clientLastName, clientPhoneNo, clientEmail, stylist.getId());
             newClient.save();
-            response.redirect("/stylists");
             model.put("stylist", stylist);
-            model.put("template", "templates/stylist.vtl");
+            model.put("client", Client.all());
+            response.redirect("/");
+            // model.put("template", "templates/success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        //delette
         post("/clients/:id/delete", (request, response) -> {
             HashMap<String, Object> model = new HashMap<String, Object>();
             Client client = Client.find(Integer.parseInt(request.params("id")));

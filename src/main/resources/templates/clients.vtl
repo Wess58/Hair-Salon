@@ -1,9 +1,8 @@
-
-        <h1>client list!</h1>
+<h1>client list!</h1>
 
         #if ($clients)
         <ul>
-        #foreach ($client in $clients)
+        #foreach ($client in $stylist.getClients())
         <li>
         $client.getClientFirstName() $client.getClientLastName
         </li>

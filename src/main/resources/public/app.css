@@ -6,6 +6,30 @@ body{
 
 
 }
+nav{
+  background-color: rgba(146, 43, 33, 0.6);
+  font-size: 20px;
+}
+
+.nav-link {
+  transition: 0.4s;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 5px;
+}
+.nav-link:hover {
+  background-color: #ffffff;
+  color: #EEA200;
+  padding: 5px 0px;
+}
+.Intro{
+  transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1 );
+  padding: 20px;
+}
+.Intro:hover{
+  background-color: rgba(146, 43, 33, 0.6);
+
+}
 h1{
   font-family: 'Jim Nightshade', cursive;
   text-align: center;
@@ -21,29 +45,42 @@ h2{
     border-bottom-style: double;
     border-bottom-width: 5px;
 }
+#h3Intro{
+  color: black;
+}
+
 h3{
   text-align: center;
   color: white;
 }
+.stylists{
+  margin-bottom: 20px;
+}
 .clients{
   font-size: 20px;
 }
+.cardclients{
+  margin: 20px;
+  padding: 20px;
+}
+
 .rowclients{
   margin-top: 2em;
 }
 .form{
-  background-color: rgba(146, 43, 33, 0.6);
+  background-color: rgba(146, 43, 33, 0.8);
   padding: 20px;
   padding-left: 80px;
-  width: 30px;
+  box-shadow: 0 0 15px 10px #7B7D7D ;
+}
+#formclient{
+  background-color: rgba(146, 43, 33, 0.8);
+  padding: 20px;
+  padding-left: 80px;
   box-shadow: 0 0 20px 10px #7B7D7D ;
 }
-.formclient{
-  background-color: rgba(146, 43, 33, 0.6);
-  padding: 20px;
-  padding-left: 80px;
-  width: 30px;
-  box-shadow: 0 0 20px 10px #7B7D7D ;
+.clientname{
+  font-weight: bold;
 }
 .links{
   font-size: 35px;
@@ -72,16 +109,25 @@ input{
   padding-left: 10px;
   padding: 5px;
 }
+#logo{
+  width: 50px;
+  height: 50px;
+}
 #icon{
   width: 200px;
   height: 200px;
+}
+#comb1{
+  width: 100px;
+  height: 100px;
 }
 #bottom {
   font-family: 'Grand Hotel', cursive;
   margin-top: 2em;
   padding-left: 40%;
   padding-top: 1em;
-  color: white;
+  color: black;
+  font-size: 20px;
 
 }
 .bottom {

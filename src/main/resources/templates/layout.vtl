@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hair-Salon</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Jim+Nightshade|Reem+Kufi" rel="stylesheet">
-    <link rel='stylesheet' href='/app.css'>
-  </head>
-  <body>
-    <div class="container-fluid">
-      #parse( $template )
-      <footer>
-        <div id="bottom" class="widget wrapper">
-          <a href="https://www.instagram.com/wess_._wesley/"><img class="bottom" src="images/instagram.png" alt="Insta"></a>
-          <a href="https://drive.google.com/open?id=1hjtGKC5JUB8N9zLXGLn_JTIy1FCdR4cn"><img class="bottom" src="images/Drive.ico"></a>
-          <a href="https://github.com/Wess58"><img class="bottom" src="images/github.png"></a>
-          <br>
-          <br>
-          <p class="contact">Email: wesleymbate@gmail.com<br>Copyright 2018 wesleymbate - All Rights Reserved</p>
-        </div>
-      </footer>
+
+<head>
+  <title>Hair-Salon</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Jim+Nightshade|Reem+Kufi" rel="stylesheet">
+  <link rel='stylesheet' href='/app.css'>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light stroke">
+    <a class="navbar-brand" href="#"><img id="logo" src="images/logo.png">KIDOSHO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Stylists</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/clients/all">Clients</a>
+        </li> -->
+
+      </ul>
     </div>
-  </body>
+  </nav>
+  #parse( $template )
+  <footer>
+    <div id="bottom" class="widget wrapper">
+      <a href="https://www.instagram.com/wess_._wesley/"><img class="bottom" src="images/instagram.png" alt="Insta"></a>
+      <a href="https://drive.google.com/open?id=1hjtGKC5JUB8N9zLXGLn_JTIy1FCdR4cn"><img class="bottom" src="images/Drive.ico"></a>
+      <a href="https://github.com/Wess58"><img class="bottom" src="images/github.png"></a>
+      <br>
+      <br>
+      <p class="contact">Email: wesleymbate@gmail.com<br>Copyright 2018 wesleymbate - All Rights Reserved</p>
+    </div>
+  </footer>
+  </div>
+</body>
+
 </html>

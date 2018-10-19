@@ -3,9 +3,13 @@
   <img id="icon" src="images/woman-haircut.png">
 </h1>
 <h2>Salon Managament System</h1>
+<div class="Intro">
+<h3 id="h3Intro">salon management solution that helps manage daily operational tasks and more so managing employees and clients by sorting them in
+a database where you're able to view, edit or delete details of both parties or even reassign a clients to another stylist if need be.</h3>
+</div>
 <div class="row row1">
- <div class="col-md-6 form">
-   <form action="/stylists" method="post">
+ <div class="col-md-6">
+   <form class="form" action="/stylists" method="post">
                         <h3>ADD STYLIST</h3>
        <div class="form-group">
             <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
@@ -44,6 +48,7 @@
 
     <ol>
       #foreach ($stylist in $stylists)
+        <div class="stylists card">
         <li><a href="/stylists/$stylist.getId()" class="links">$stylist.getFirstName() $stylist.getSecondName() $stylist.getLastName()</a></li>
         <p>$stylist.getPhoneNo()
         <br>
@@ -51,14 +56,16 @@
           <br>
         <form action="#" method="">
             <button type="submit" class="btn btn-danger" id="delete-task">Delete</button>
-    </form>
+            </form>
+            </div>
         #end
     </ol>
     #else
     <p>NO STYLISTS</p>
     #end
-
-
     </div>
+
+
+
    </div>
 </div>
