@@ -53,7 +53,7 @@
 
 
 ### BUGS
-No Bugs found, If any are experienced contact via Email wesleymbate@gmail.com :mailbox: and the issue will be sorted.
+The clients submit does not redirect to the display area of the specific stylist, If any other bugs are experienced contact via Email wesleymbate@gmail.com :mailbox: and the issue will be sorted.
 
 
 ### LICENSE
