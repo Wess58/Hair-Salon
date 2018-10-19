@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 public class DB {
   private static URI dbUri;
    public static Sql2o sql2o;
+   
    Logger logger = LoggerFactory.getLogger(DB.class);
    static {
 
@@ -19,8 +20,8 @@ public class DB {
            int port = dbUri.getPort();
            String host = dbUri.getHost();
            String path = dbUri.getPath();
-           String username = (dbUri.getUserInfo() == null) ? postgres : dbUri.getUserInfo().split(":")[0];
-           String password = (dbUri.getUserInfo() == null) ? makena58 : dbUri.getUserInfo().split(":")[1];
+           String username = (dbUri.getUserInfo() == null) ? "postgres" : dbUri.getUserInfo().split(":")[0];
+           String password = (dbUri.getUserInfo() == null) ? "makena58" : dbUri.getUserInfo().split(":")[1];
            sql2o = new Sql2o("jdbc:postgresql://" + host + ":" + port + path, username, password);
        } catch (URISyntaxException e ) {
            logger.error("Unable to connect to database.");
